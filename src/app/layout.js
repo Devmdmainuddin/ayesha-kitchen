@@ -2,6 +2,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import Authprovider from "@/context/Authprovider";
 
 
 
@@ -27,10 +28,13 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider attribute="class" defaultTheme="light">
-          <Navbar></Navbar>
-          {children}
-        </ThemeProvider>
+        <Authprovider>
+          <ThemeProvider attribute="class" defaultTheme="light">
+            <Navbar></Navbar>
+            {children}
+          </ThemeProvider>
+        </Authprovider>
+
 
       </body>
     </html>

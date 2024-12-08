@@ -3,10 +3,10 @@ import * as React from "react"
 import { Moon, MoonIcon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
-
+import { useSession } from "next-auth/react";
 import { AlignRight } from "lucide-react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import {
     Sheet,
     SheetContent,
@@ -24,8 +24,14 @@ const Navbar = () => {
     const toggleTheme = () => {
         setTheme(theme === 'light' ? 'dark' : 'light');
     };
-
+    const router=useRouter();
+    const session = useSession() 
     const pathName = usePathname()
+
+    const handler=()=>{
+        router.push('/api/auth/signin')
+    }
+
     const links = [
         {
             title: 'Home',
@@ -49,14 +55,7 @@ const Navbar = () => {
             title: 'contact',
             path: '/contact'
         },
-        {
-            title: 'Login',
-            path: '/login'
-        },
-        {
-            title: 'registation',
-            path: '/registation'
-        }
+    
     ]
     return (
         <div className=" border-b">
@@ -80,6 +79,11 @@ const Navbar = () => {
 
                         </ul>
                     </nav>
+                    <div>
+                {session? <button onClick={handler}>logout</button>: <button onClick={handler}>signin</button>}
+                
+            </div>
+            
                     <Button
                         variant="outline"
                         size="icon"
