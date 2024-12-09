@@ -1,5 +1,7 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import GitHubProvider from "next-auth/providers/github";
+import GoogleProvider from "next-auth/providers/google";
 
 export const authOptions={
     secret: process.env.NEXTAUTH_SECRET ,
@@ -21,7 +23,9 @@ export const authOptions={
                 }
                
                 if(email){
-                    const currentUser = users.find((user) => user.email === email)
+                    const db=await connectDB();
+                    const currentUser =await db.collection('users').findOne({email})
+                    // const currentUser = users.find((user) => user.email === email)
                     if(currentUser){
                         if(currentUser.password === password){
                             return {...currentUser};
@@ -31,6 +35,14 @@ export const authOptions={
                 return null; 
             },
         }),
+        GoogleProvider({
+            clientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
+            clientSecret: process.env.NEXT_PUBLIC_NEXT_PUBLIC_GOOGLE_CLIENT_SECRET
+          }),
+          GitHubProvider({
+            clientId: process.env.NEXT_PUBLIC_GITHUB_ID,
+            clientSecret: process.env.NEXT_PUBLIC_GITHUB_SECRET
+          })
     ],
 
     callbacks: {
@@ -52,7 +64,3 @@ const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };
 
-const users = [
-    { id: 1, name: "Test User",  type:"admin", email: "test@example.com", password: "password123" },
-    { id: 2, name: "User 2", type:"user", email: "user2@example.com", password: "user2password" },
-];
