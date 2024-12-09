@@ -9,7 +9,7 @@ export const middleware = async (request) => {
 
   if (!token) {
     // Redirect to sign-in if token is missing
-    return NextResponse.redirect(new URL('/api/auth/signin', request.url));
+    return NextResponse.redirect(new URL('/login', request.url));
   }
 
   // Allow the request to proceed if token exists

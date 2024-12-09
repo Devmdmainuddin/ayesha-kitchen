@@ -13,7 +13,7 @@ const connectDB = async () => {
       }
     });
    
-    db =await client.db("e-com");
+    db =await client.db("ayesha-kitchen");
     console.log('Connected to MongoDB');
     return db;
 

@@ -37,7 +37,7 @@ const Navbar = () => {
     const router = useRouter();
     const session = useSession()
     const pathName = usePathname()
-    console.log(session?.data?.user);
+  
     const handler = () => {
         router.push('/api/auth/signin')
     }
@@ -115,14 +115,22 @@ const Navbar = () => {
                                     </div>
                                     </>
                                     :
-                                    <p onClick={handler}>signin</p>}
+                                    <p onClick={handler}>My Account </p>}
 
 
                             </DropdownMenuTrigger>
                             <DropdownMenuContent className='mt-2'>
-                                <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                                <DropdownMenuSeparator />
-                                <DropdownMenuItem> <p onClick={() => signOut()}>logout</p> </DropdownMenuItem>
+                                {session.status === "authenticated" ? <>
+                                    <DropdownMenuLabel> <p >Deshboard</p> </DropdownMenuLabel>
+                                    <DropdownMenuSeparator />
+                                    <DropdownMenuItem> <p onClick={() => signOut()}>logout</p> </DropdownMenuItem>
+
+                                </>
+                                    :
+                                    <> <DropdownMenuLabel><p onClick={handler}>registation</p></DropdownMenuLabel></>}
+
+
+
                             </DropdownMenuContent>
                         </DropdownMenu>
                     </div>
@@ -132,50 +140,50 @@ const Navbar = () => {
                             <SheetTrigger className="outline-0 focus:outline-0"><AlignRight /></SheetTrigger>
                             <SheetContent side='right' className='m-0 p-0'>
                                 <SheetHeader className='text-white bg-[#4fc04f] p-3  items-center gap-6 flex-row'>
-                                    <SheetTitle className='text-white'><span>logo</span>  
-                                   </SheetTitle>
-                                   <span className=" flex gap-2 items-center">
-                                    <Button
-                                        variant="outline"
-                                        size="icon"
-                                        onClick={toggleTheme}
-                                        aria-label="Toggle theme"
-                                        className='bg-slate-500 outline-0 border-0'
-                                    >
-                                        {theme === 'light' ? (
-                                            <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                                        ) : (
-                                            <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-                                        )}
-                                    </Button>
+                                    <SheetTitle className='text-white'><span>logo</span>
+                                    </SheetTitle>
+                                    <span className=" flex gap-2 items-center">
+                                        <Button
+                                            variant="outline"
+                                            size="icon"
+                                            onClick={toggleTheme}
+                                            aria-label="Toggle theme"
+                                            className='bg-slate-500 outline-0 border-0'
+                                        >
+                                            {theme === 'light' ? (
+                                                <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                                            ) : (
+                                                <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                                            )}
+                                        </Button>
 
-                                    <DropdownMenu>
-                                        <DropdownMenuTrigger className="outline-0">
+                                        <DropdownMenu>
+                                            <DropdownMenuTrigger className="outline-0">
 
-                                            {session.status === "authenticated" ?
-                                                <><div className="flex gap-1 items-center">
-                                                    <Image src={session?.data?.user?.image} alt='profile image' width={36} height={36} className="rounded-full"></Image>
-                                                    <h2>{session?.data?.user?.name}</h2>
-                                                    <ChevronDown />
-                                                    {/* <button onClick={() => signOut()}>logout</button>  */}
-                                                </div>
-                                                </>
-                                                :
-                                                <p onClick={handler}>signin</p>}
+                                                {session.status === "authenticated" ?
+                                                    <><div className="flex gap-1 items-center">
+                                                        <Image src={session?.data?.user?.image} alt='profile image' width={36} height={36} className="rounded-full"></Image>
+                                                        <h2>{session?.data?.user?.name}</h2>
+                                                        <ChevronDown />
+                                                        {/* <button onClick={() => signOut()}>logout</button>  */}
+                                                    </div>
+                                                    </>
+                                                    :
+                                                    <p onClick={handler}>signin</p>}
 
 
-                                        </DropdownMenuTrigger>
-                                        <DropdownMenuContent className='mt-2'>
-                                            <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                                            <DropdownMenuSeparator />
-                                            <DropdownMenuItem> <p onClick={() => signOut()}>logout</p> </DropdownMenuItem>
-                                        </DropdownMenuContent>
-                                    </DropdownMenu>
-                                </span>
+                                            </DropdownMenuTrigger>
+                                            <DropdownMenuContent className='mt-2'>
+                                                <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                                                <DropdownMenuSeparator />
+                                                <DropdownMenuItem> <p onClick={() => signOut()}>logout</p> </DropdownMenuItem>
+                                            </DropdownMenuContent>
+                                        </DropdownMenu>
+                                    </span>
                                 </SheetHeader>
-                               
+
                                 <SheetDescription>
-                                
+
                                 </SheetDescription>
                                 <ul className="flex gap-3 flex-col px-3 mt-[50px]">
                                     {links.map((link, idx) => (

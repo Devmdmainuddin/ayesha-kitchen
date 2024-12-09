@@ -1,5 +1,5 @@
 'use client'
-import Image from "next/image";
+
 import Link from "next/link";
 
 
@@ -10,6 +10,7 @@ const page = () => {
       name: e.target.name.value,
       email: e.target.email.value,
       password: e.target.password.value,
+      type:"user"
     }
 
     try {
@@ -37,9 +38,7 @@ const page = () => {
   return (
     <main className="w-full flex justify-center items-center bg-gray-300 md:p-24 p-10 min-h-screen">
       <section className="flex flex-col gap-3">
-        <div className="flex justify-center">
-          <Image className="h-12" src="/logo.png" alt="Logo" width={100} height={100} />
-        </div>
+        
         <div className="flex flex-col gap-3 bg-white md:p-10 p-5 rounded-sm md:min-w-[440px] w-full">
           <h1 className="text-center font-bold text-xl mb-6">Sign Up With Email</h1>
           <form
