@@ -54,7 +54,7 @@ const PopularDesh = () => {
         }
     ];
     return (
-        <div className="mt-[120px]">
+        <div className="mt-[76px]">
             <Container>
                 <div className="border-b pb-3">
                     <h2 className="text-2xl capitalize">popular desh </h2>
