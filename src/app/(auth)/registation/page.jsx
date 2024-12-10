@@ -26,7 +26,7 @@ const page = () => {
         throw new Error(error.message || "Failed to sign up");
       }
       const data = await res.json();
-      console.log('Response data:', data);
+    
       alert("User signed up successfully!");
     } catch (error) {
      
