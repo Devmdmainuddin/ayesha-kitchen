@@ -62,7 +62,7 @@ const Hero = () => {
                         </h2>
                         <p className="text-white mt-3">BDT: {item.price} Taka</p>
                         <div className="flex mt-3">
-                           <Link href=''> <button className="py-2 px-4 bg-[#11b6f8df] text-white rounded-sm capitalize">view details </button> </Link>
+                           <Link href=''> <button className="py-2 px-4 bg-teal-700 text-white rounded-sm capitalize">view details </button> </Link>
                            
                         </div>
                     </div>

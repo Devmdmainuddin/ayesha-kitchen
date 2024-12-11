@@ -1,3 +1,4 @@
+import {Inter,Roboto} from "next/font/google"
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -16,6 +17,8 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
+const inter = Inter({subsets: ["latin"],});
+const roboto = Roboto({weight:['400','500','700','700'], subsets:["latin"]});
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -37,13 +40,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}
+        className={` ${inter.className} antialiased relative`}
       >
         <Authprovider>
           <ThemeProvider attribute="class" defaultTheme="light">
             <Navbar></Navbar>
             {children}
-            <span className="fixed top-1/2 right-6  bg-slate-400 hover:bg-[#25bb4a]  text-white py-2 px-4 cursor-pointer transition-all duration-500">
+            <span className="fixed top-1/2 right-6  bg-slate-400 hover:bg-[#25bb4a]  text-white py-2 px-4 cursor-pointer transition-all duration-500 z-50">
               <Dialog>
                 <DialogTrigger asChild>
                   <Headset />

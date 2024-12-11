@@ -37,7 +37,7 @@ const Navbar = () => {
     const router = useRouter();
     const session = useSession()
     const pathName = usePathname()
-  
+
     const handler = () => {
         router.push('/api/auth/signin')
     }
@@ -68,9 +68,25 @@ const Navbar = () => {
 
     ]
     return (
-        <div className=" border-b">
+        <div className=" ">
+            <div className="bg-[#001932] ">
+               <Container>
+               <div className=" bg-[#001932] text-white flex justify-between items-center gap-6">
+               <p className="text-sm"><span></span> <span className="elementor-icon-list-text">House # 39, Gareeb-e-Newaj Avenue Sector # 13, Uttara, Dhaka-1230, Bangladesh.</span> </p>
+                <p className="border-l-2 border-[#818181] text-sm py-3 pl-3"><span></span>01759483544</p>
+                <p className="border-l-2 border-[#818181] text-sm py-3 pl-3"><span></span>devmdmainuddin@gmail.com</p>
+                <div className="border-l-2 border-[#818181] text-sm py-3 pl-3">
+                    <Link href=''></Link>
+                    <Link href=''></Link>
+                    <Link href=''></Link>
+                </div>
+                <button>Booking</button>
+            </div>
+               </Container>
+               
+            </div>
             <Container>
-                <div className='flex justify-between items-center  py-3'>
+                <div className='flex justify-between items-center  py-3 border-b'>
                     <h1 className="text-2xl font-bold">
                         <Link href="/" className="logo">Ayesha kitchen </Link>
                     </h1>
@@ -85,10 +101,7 @@ const Navbar = () => {
 
                         </ul>
                     </nav>
-                    {/* <div>
-                {session? <button onClick={handler}>logout</button>: <button onClick={handler}>signin</button>}
-                
-            </div> */}
+
                     <div className=" hidden md:flex gap-6 items-center">
                         <Button
                             variant="outline"

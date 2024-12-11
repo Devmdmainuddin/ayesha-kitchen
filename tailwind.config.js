@@ -8,6 +8,9 @@ module.exports = {
   ],
   theme: {
   	extend: {
+		outline: {
+			0: '0 solid transparent',
+		  },
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
@@ -54,7 +57,12 @@ module.exports = {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+		variants: {
+			extend: {
+			  outline: ['focus'],
+			},
+		  },
   	}
   },
   plugins: [require("tailwindcss-animate")],
