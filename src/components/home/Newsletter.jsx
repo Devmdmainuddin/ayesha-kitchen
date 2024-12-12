@@ -4,7 +4,7 @@ import Container from "../Container";
 const Newsletter = () => {
     return (
 
-        <section className="Newsletter mt-[120px] bg-gradient-to-r from-teal-700 via-teal-600 to-teal-700">
+        <section className="Newsletter mt-[50px] bg-gradient-to-r from-teal-700 via-teal-600 to-teal-700">
 
             <Container>
                 <div className=" py-20 px-6 relative font-[sans-serif]">

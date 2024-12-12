@@ -68,9 +68,9 @@ const PopularDesh = () => {
                         loop: true
                     }}
                     className="w-full  mx-auto mt-[50px]">
-                    <CarouselContent className="-ml-6">
+                    <CarouselContent className="">
 
-                        {items.map((item, idx) => <CarouselItem key={idx} className="pl-1 md:basis-1/2 lg:basis-1/3  h-[400px]">
+                        {items.map((item, idx) => <CarouselItem key={idx} className=" md:basis-1/2 lg:basis-1/3  h-[400px]">
                             <div
                                 style={{
                                     backgroundImage: `linear-gradient(180deg, hsla(0, 0%, 6%, 0) 41.54%, hsla(0, 0%, 6%, 0.621) 72.29%, #101010), url('${item.image}')`,

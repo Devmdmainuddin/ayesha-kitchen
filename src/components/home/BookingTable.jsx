@@ -17,7 +17,7 @@ import {
     SelectContent,
     SelectGroup,
     SelectItem,
-    SelectLabel,
+    
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select"
@@ -29,10 +29,10 @@ const BookingTable = () => {
     const form = useForm()
 
     return (
-        <div className="bg-[#ECECEC] py-[50px]">
+        <div className="bg-[#ECECEC] mt-[50px] py-[50px]">
             <Container>
                 <div className="flex gap-6 justify-between items-center flex-col lg:flex-row flex-wrap">
-                    <div className="flex-1">
+                    <div className="flex-1 w-full">
                         <h4 className="text-xl md:text-[30px] text-[#d61c22]">Reservation</h4>
                         <h2 className="text-2xl md:text-[50px] font-bold uppercase text-[#222222] md:mt-3">book table </h2>
                         <div className='mt-9 '>

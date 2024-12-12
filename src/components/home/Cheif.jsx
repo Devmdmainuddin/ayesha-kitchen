@@ -6,25 +6,25 @@ const Cheif = () => {
         {
             image: '/pic-1.png',
             name: 'John Doe',
-            position: 'Product Manager',
+            position: 'Master Chef',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna.'
         },
         {
             image: '/pic-2.png',
             name: 'Jane Doe',
-            position: 'Software Engineer',
+            position: 'Master Chef',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna.'
         },
         {
             image: '/pic-3.png',
             name: 'Michael Doe',
-            position: 'Marketing Manager',
+            position: 'Master Chef',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna.'
         },
         {
             image: '/pic-4.png',
             name: 'Sarah Doe',
-            position: 'UI/UX Designer',
+            position: 'Master Chef',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna.'
         }
     ]
@@ -38,7 +38,7 @@ const Cheif = () => {
        
         <div className="relative z-10 container mx-auto px-4">
             <div className="max-w-xl">
-                <h2 className="text-lg mb-2 font-semibold text-white uppercase">OUR  <span className="text-2xl text-green-500"> BEST</span> CHEIF</h2>
+                <h2 className="text-3xl mb-2 font-semibold text-white uppercase">OUR  <span className="text-[36px] text-green-500"> BEST</span> CHEIF</h2>
                 <p className="mb-20 text-lg text-white">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
             </div>
             <div className="flex flex-wrap -m-3">
