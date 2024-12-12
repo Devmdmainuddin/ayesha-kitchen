@@ -4,29 +4,16 @@ import React from 'react';
 const Footer = () => {
     return (
         <div>
-            <section className="py-10 bg-blue-900 sm:pt-16 lg:pt-24">
+            <section className="py-10  sm:pt-16 lg:pt-24">
                 <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-12">
                         <div>
-                            <Image className="w-auto h-7" src="https://cdn.rareblocks.xyz/collection/celebration/images/logo-alt.svg" width={100} height={100} alt="" />
-
-                            <ul className="mt-8 space-y-4">
-                                <li>
-                                    <a href="#" title="" className="text-blue-200 transition-all duration-200 hover:text-white focus:text-white"> About </a>
-                                </li>
-
-                                <li>
-                                    <a href="#" title="" className="text-blue-200 transition-all duration-200 hover:text-white focus:text-white"> Features </a>
-                                </li>
-
-                                <li>
-                                    <a href="#" title="" className="text-blue-200 transition-all duration-200 hover:text-white focus:text-white"> Works </a>
-                                </li>
-
-                                <li>
-                                    <a href="#" title="" className="text-blue-200 transition-all duration-200 hover:text-white focus:text-white"> Career </a>
-                                </li>
-                            </ul>
+                            <h3 className="text-lg font-semibold ">ayesha-kitchen</h3>
+                            <div>
+                                <p>9 W 53rd St, New York, NY 10019, USA</p>
+                                <p>+1 212-344-1230</p>
+                                <p>+1 212-344-1230</p>
+                            </div>
                         </div>
 
                         <div>
@@ -74,25 +61,15 @@ const Footer = () => {
                         </div>
 
                         <div>
-                            <p className="text-lg font-semibold text-white">Extra Links</p>
+                            <h3 className="text-lg font-semibold ">Working Hours</h3>
 
-                            <ul className="mt-8 space-y-4">
-                                <li>
-                                    <a href="#" title="" className="text-blue-200 transition-all duration-200 hover:text-white focus:text-white"> Customer Support </a>
-                                </li>
+                            <div className="flex flex-col justify-center ">
+                                <p className="text-sm font-bold mt-[20px]">Sunday to Tuesday </p>
+                                <p className="text-2xl font-extrabold mt-2">10 am <span className="text-orange-400">:</span> 10 pm</p>
+                                <p className="text-sm font-bold mt-2">Friday to Saturday </p>
+                                <p className="text-2xl font-extrabold mt-2">08 am <span className="text-orange-400">:</span> 08 pm</p>
 
-                                <li>
-                                    <a href="#" title="" className="text-blue-200 transition-all duration-200 hover:text-white focus:text-white"> Delivery Details </a>
-                                </li>
-
-                                <li>
-                                    <a href="#" title="" className="text-blue-200 transition-all duration-200 hover:text-white focus:text-white"> Terms & Conditions </a>
-                                </li>
-
-                                <li>
-                                    <a href="#" title="" className="text-blue-200 transition-all duration-200 hover:text-white focus:text-white"> Privacy Policy </a>
-                                </li>
-                            </ul>
+                            </div>
                         </div>
                     </div>
 

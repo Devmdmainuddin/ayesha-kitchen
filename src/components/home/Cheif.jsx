@@ -26,7 +26,19 @@ const Cheif = () => {
             name: 'Sarah Doe',
             position: 'Master Chef',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna.'
-        }
+        },
+        {
+            image: '/pic-2.png',
+            name: 'Jane Doe',
+            position: 'Master Chef',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna.'
+        },
+        {
+            image: '/pic-3.png',
+            name: 'Michael Doe',
+            position: 'Master Chef',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna.'
+        },
     ]
     return (
         <section
