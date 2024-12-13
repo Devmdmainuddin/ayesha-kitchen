@@ -16,8 +16,8 @@ const Menu = () => {
         {
             image: "/h1.jpg",
             category: "sizzling",
-            title: "kashmiri polao + veg korma + kola puri",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque a consectetur velit, ac molestie ipsum. Donec sodales, massa et auctor.",
+            title: "Australian undercut beef carpaccio",
+            description: "Fresh Parmesan Cheese, Garlic, Olive oil, Balsamic Vinegar, arugula",
             price: 480,
             authorImage: "",
             autherName: "md.mainuddin",
@@ -26,8 +26,8 @@ const Menu = () => {
         {
             image: "/h2.jpg",
             category: "Dessert",
-            title: "Basmati Rice /Nan + kaju butter masala + sabzi dal",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque a consectetur velit, ac molestie ipsum. Donec sodales, massa et auctor.",
+            title: "seared yellow fin tuna tataki",
+            description: "Sesame Seed Crusted with Avocado Salsa and Teriyaki Sauce",
             price: 550,
             authorImage: "",
             autherName: "md.mainuddin",
@@ -36,8 +36,8 @@ const Menu = () => {
         {
             image: "/h3.jpg",
             category: "Appetizer",
-            title: "basmati rice / nan + mix vegetable + yellow dal",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque a consectetur velit, ac molestie ipsum. Donec sodales, massa et auctor.",
+            title: "authentic swiss cheese fondu ",
+            description: "Swiss Cheese & Emmental Cheese with Garlic Bread Cotton and Crispy Fried Chicken",
             price: 450,
             authorImage: "",
             autherName: "md.mainuddin",
@@ -46,8 +46,38 @@ const Menu = () => {
         {
             image: "/h4.jpg",
             category: "Mutton Biriyani",
-            title: "Pellentesque a consectetur velit, massa et auctor.",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque a consectetur velit, ac molestie ipsum. Donec sodales, massa et auctor.",
+            title: "Fried calamari with truffle ",
+            description: "Rocket leafs, Truffle Oil, Tartar Sauce",
+            authorImage: "",
+            autherName: "md.mainuddin",
+            creatrAt: "14 Aug"
+        },
+        {
+            image: "/h5.jpg",
+            category: "Appetizer",
+            title: "fried bell pepper and tomato chili",
+            description: "Bell Peppers, Onions, Tomatoes, Garlic, Cumin, Oregano, Salt & Pepper",
+            price: 350,
+            authorImage: "",
+            autherName: "md.mainuddin",
+            creatrAt: "14 Aug"
+        },
+        {
+            image: "/h6.jpg",
+            category: "Mutton Biriyani",
+            title: "Creamy Wild Mushroom Truffle Soup",
+            description: "Chopped Onions, Green Beans, Carrots, Peas, Cabbage, Fresh Tomatoes, Cilantro",
+            price: 400,
+            authorImage: "",
+            autherName: "md.mainuddin",
+            creatrAt: "14 Aug"
+        },
+        {
+            image: "/h7.jpg",
+            category: "Appetizer",
+            title: "fried mixed vegetable",
+            description: "Chopped Onions, Green Beans, Carrots, Peas, Cabbage, Fresh Tomatoes, Cilantro",
+            price: 400,
             authorImage: "",
             autherName: "md.mainuddin",
             creatrAt: "14 Aug"
@@ -57,13 +87,17 @@ const Menu = () => {
     return (
         <div className='mt-[86px]'>
             <Container>
-            <div className="border-b pb-3 flex justify-between items-center">
+                <div className="border-b pb-3 flex justify-between items-center">
+                    <div>
                     <h2 className="text-2xl capitalize">menu items </h2>
+                        
+                    </div>
+                    
                     <button className='capitalize py-2 px-4 bg-[#25bb4a] text-white '>show more</button>
                 </div>
                 <div className='grid grid-col md:grid-cols-2 lg:grid-cols-3 mt-9'>
                     <div className=''>
-                        <h3>Breakfast</h3>
+                        <h3 className='text-xl'>Breakfast</h3>
                         <div>
                             <Carousel
                                 orientation="vertical"
@@ -76,10 +110,10 @@ const Menu = () => {
                                     align: "start",
                                     loop: true
                                 }}
-                                className="  mx-auto mt-6">
+                                className=" mt-6">
                                 <CarouselContent className="-ml-6 mt-0 w-full h-[375px]  p-2">
 
-                                    {items.map((item, idx) => <CarouselItem key={idx} className="pt-0 px-6 basis-3  h-[375px]">
+                                    {items.map((item, idx) => <CarouselItem key={idx} className="pt-0  basis-3  h-[375px]">
                                         <MenuCard item={item}></MenuCard>
                                     </CarouselItem>)}
                                 </CarouselContent>
@@ -89,7 +123,7 @@ const Menu = () => {
                         </div>
                     </div>
                     <div className=''>
-                        <h3>Dinner</h3>
+                        <h3 className='text-xl'>Dinner</h3>
                         <div>
                             <Carousel
                                 orientation="vertical"
@@ -102,10 +136,10 @@ const Menu = () => {
                                     align: "start",
                                     loop: true
                                 }}
-                                className="  mx-auto mt-6">
+                                className=" mt-6">
                                 <CarouselContent className="-ml-6 mt-0 w-full h-[375px]  p-2">
 
-                                    {items.map((item, idx) => <CarouselItem key={idx} className="pt-0 px-6 basis-3  h-[375px]">
+                                    {items.map((item, idx) => <CarouselItem key={idx} className="pt-0  basis-3  h-[375px]">
                                         <MenuCard item={item}></MenuCard>
                                     </CarouselItem>)}
                                 </CarouselContent>
@@ -116,7 +150,7 @@ const Menu = () => {
                     </div>
 
                     <div className=''>
-                        <h3>Drinks</h3>
+                        <h3 className='text-xl'>Drinks</h3>
                         <div>
                             <Carousel
                                 orientation="vertical"
@@ -129,10 +163,10 @@ const Menu = () => {
                                     align: "start",
                                     loop: true
                                 }}
-                                className="  mx-auto mt-6">
+                                className=" mt-6">
                                 <CarouselContent className="-ml-6 mt-0 w-full h-[375px]  p-2">
 
-                                    {items.map((item, idx) => <CarouselItem key={idx} className="pt-0 px-6 basis-3  h-[375px]">
+                                    {items.map((item, idx) => <CarouselItem key={idx} className="pt-0  basis-3  h-[375px]">
                                         <MenuCard item={item}></MenuCard>
                                     </CarouselItem>)}
                                 </CarouselContent>

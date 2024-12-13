@@ -20,6 +20,7 @@ const About = () => {
                     <div>
                         <h4 className="text-white text-sm">Why people choose us?</h4>
                         <h2 className="text-white text-3xl mt-2 font-semibold">our restaurant</h2>
+                        <p className="text-white mt-2">Our kitchen is rooted in an appreciation for exceptional homegrown ingredients, thoughtful-yet-simple preparations, and a passion for breathing new life into Old World recipes. Desserts borrow from treasured family recipes extending back four generations. In addition to the menus listed here, we offer a selection of daily specials. </p>
                         <div className="bg-white  p-6 rounded-sm mt-4">
                             <Accordion type="single" collapsible>
                                 <AccordionItem value="item-1">

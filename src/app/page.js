@@ -10,7 +10,8 @@ import BookingTable from "@/components/home/BookingTable";
 import About from "@/components/home/About";
 import Cheif from "@/components/home/Cheif";
 import Working from "@/components/home/Working";
-import Footer from "@/components/Footer";
+import Blog from "@/components/home/Blog";
+
 
 export default function Home() {
   return (
@@ -26,8 +27,9 @@ export default function Home() {
     <BookingTable/>
     <About/>
     <Newsletter/>
+    <Blog/>
 
-    <Footer/>
+   
     </div>
   );
 }

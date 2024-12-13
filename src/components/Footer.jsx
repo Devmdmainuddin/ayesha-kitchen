@@ -1,15 +1,17 @@
 import Image from 'next/image';
 import React from 'react';
+import Container from './Container';
 
 const Footer = () => {
     return (
         <div>
-            <section className="py-10  sm:pt-16 lg:pt-24">
-                <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+            <section className="py-10 bg-[#001A31]  sm:pt-16 lg:pt-24">
+                <Container>
+                <div className="">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-12">
                         <div>
-                            <h3 className="text-lg font-semibold ">ayesha-kitchen</h3>
-                            <div>
+                            <h3 className="text-lg font-semibold text-white">ayesha-kitchen</h3>
+                            <div className='text-blue-200 mt-6'>
                                 <p>9 W 53rd St, New York, NY 10019, USA</p>
                                 <p>+1 212-344-1230</p>
                                 <p>+1 212-344-1230</p>
@@ -61,9 +63,9 @@ const Footer = () => {
                         </div>
 
                         <div>
-                            <h3 className="text-lg font-semibold ">Working Hours</h3>
+                            <h3 className="text-lg font-semibold text-white">Working Hours</h3>
 
-                            <div className="flex flex-col justify-center ">
+                            <div className="flex flex-col justify-center text-blue-200">
                                 <p className="text-sm font-bold mt-[20px]">Sunday to Tuesday </p>
                                 <p className="text-2xl font-extrabold mt-2">10 am <span className="text-orange-400">:</span> 10 pm</p>
                                 <p className="text-sm font-bold mt-2">Friday to Saturday </p>
@@ -139,6 +141,8 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
+                </Container>
+                
             </section>
 
         </div>

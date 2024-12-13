@@ -1,4 +1,4 @@
-import {Inter,Roboto} from "next/font/google"
+import { Inter, Roboto } from "next/font/google"
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -16,9 +16,10 @@ import {
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import Footer from "@/components/Footer";
 
-const inter = Inter({subsets: ["latin"],});
-const roboto = Roboto({weight:['400','500','700','700'], subsets:["latin"]});
+const inter = Inter({ subsets: ["latin"], });
+const roboto = Roboto({ weight: ['400', '500', '700', '700'], subsets: ["latin"] });
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -79,6 +80,7 @@ export default function RootLayout({ children }) {
               </Dialog>
 
             </span>
+             <Footer/>
           </ThemeProvider>
         </Authprovider>
 

@@ -5,7 +5,7 @@ const MenuCard = ({item}) => {
     return (
         <div className='flex  justify-between items-center border mt-2 pl-5 group'>
             <div className="content flex-1">
-                <h3 className="font-semibold text-xl">{item?.title}</h3>
+                <h3 className="font-semibold text-[16px] uppercase text-orange-400">{item?.title}</h3>
                 <p>{item?.descaption}</p>
                 <span className="text-lg font-bold">${item?.price}</span>
             </div>

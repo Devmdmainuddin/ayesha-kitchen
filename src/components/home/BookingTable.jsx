@@ -44,7 +44,7 @@ const BookingTable = () => {
                                                 name="Date"
                                                 render={() => (
                                                     <FormItem>
-                                                        <FormLabel className="block text-gray-700 font-medium mb-2">date</FormLabel>
+                                                        <FormLabel className="block text-gray-700 font-medium mb-2 capitalize">date</FormLabel>
 
                                                         <FormControl>
                                                             <Input
@@ -114,7 +114,7 @@ const BookingTable = () => {
                                                 name="name"
                                                 render={() => (
                                                     <FormItem>
-                                                        <FormLabel >name</FormLabel>
+                                                        <FormLabel className='capitalize'>name</FormLabel>
                                                         <FormControl>
                                                             <Input
                                                                 type="text"
@@ -133,7 +133,7 @@ const BookingTable = () => {
                                                 name="Phone"
                                                 render={() => (
                                                     <FormItem>
-                                                        <FormLabel >Phone</FormLabel>
+                                                        <FormLabel className='capitalize'>Phone</FormLabel>
                                                         <FormControl>
                                                             <Input
                                                                 type="tel"
@@ -152,7 +152,7 @@ const BookingTable = () => {
                                                 name=" Email"
                                                 render={() => (
                                                     <FormItem>
-                                                        <FormLabel >Email</FormLabel>
+                                                        <FormLabel className='capitalize'>Email</FormLabel>
                                                         <FormControl>
                                                             <Input
                                                                 type="email"

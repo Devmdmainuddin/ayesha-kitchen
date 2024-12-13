@@ -27,8 +27,49 @@ import {
 import Container from "./Container";
 import Image from "next/image"
 
+import { Input } from "@/components/ui/input";
+import { useForm } from "react-hook-form";
+import {
+    Form,
+    FormControl,
+    FormField,
+    FormItem,
+    FormLabel,
+    FormMessage,
+} from "@/components/ui/form"
+import {
+    Dialog,
+    DialogClose,
+    DialogContent,
+    DialogDescription,
+    DialogFooter,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+} from "@/components/ui/dialog"
+import {
+    Select,
+    SelectContent,
+    SelectGroup,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select"
 
 const Navbar = () => {
+    const form = useForm({
+        defaultValues: {
+            Date: "",
+            Time: "",
+            people: "",
+            name: "",
+            Phone: "",
+            Email: "",
+        },
+    });
+    const onSubmit = (data) => {
+        console.log(data);
+    };
     const { theme, setTheme } = useTheme("light")
 
     const toggleTheme = () => {
@@ -80,7 +121,168 @@ const Navbar = () => {
                     <Link href=''></Link>
                     <Link href=''></Link>
                 </div>
-                <button>Booking</button>
+              
+                <Dialog >
+                                    <DialogTrigger asChild>
+                                        <Button className="capitalize text-[16px] bg-orange-400 hover:bg-orange-400 hover:scale-105 rounded-sm text-white transition-all duration-500">Booking</Button>
+                                    </DialogTrigger>
+                                    <DialogContent className=" sm:max-w-md ">
+                                        <DialogHeader>
+                                            <DialogTitle className="text-xl md:text-[30px] text-[#d61c22]">Reservation</DialogTitle>
+                                            <DialogDescription className="text-2xl md:text-[50px] font-bold uppercase text-[#222222] mt-6">
+                                                book table
+                                            </DialogDescription>
+                                        </DialogHeader>
+                                        <div className=" mt-6">
+                                            <Form {...form}>
+                                                <form
+                                                    onSubmit={form.handleSubmit(onSubmit)}
+                                                    className="space-y-8"
+                                                >
+                                                    <div className="flex gap-6  sm:flex-row">
+                                                        <div className="w-full flex flex-col gap-4">
+                                                            <FormField
+                                                                name="Date"
+                                                                control={form.control}
+                                                                render={({ field }) => (
+                                                                    <FormItem>
+                                                                        <FormLabel className="block text-gray-700 font-medium mb-2">
+                                                                            Date
+                                                                        </FormLabel>
+                                                                        <FormControl>
+                                                                            <Input
+                                                                                {...field}
+                                                                                type="date"
+                                                                                id="Date"
+                                                                                className="w-full bg-white py-5 px-4"
+                                                                            />
+                                                                        </FormControl>
+                                                                        <FormMessage />
+                                                                    </FormItem>
+                                                                )}
+                                                            />
+                                                            <FormField
+                                                                name="Time"
+                                                                control={form.control}
+                                                                render={({ field }) => (
+                                                                    <FormItem>
+                                                                        <FormLabel>Time</FormLabel>
+                                                                        <FormControl>
+                                                                            <Input
+                                                                                {...field}
+                                                                                type="time"
+                                                                                id="Time"
+                                                                                className="w-full bg-white py-5 px-4"
+                                                                            />
+                                                                        </FormControl>
+                                                                        <FormMessage />
+                                                                    </FormItem>
+                                                                )}
+                                                            />
+                                                            <FormField
+                                                                name="people"
+                                                                control={form.control}
+                                                                render={({ field }) => (
+                                                                    <FormItem>
+                                                                        <FormLabel>Number of people</FormLabel>
+                                                                        <FormControl>
+                                                                            <Select {...field}>
+                                                                                <SelectTrigger className="w-full bg-white py-5 px-4">
+                                                                                    <SelectValue placeholder="Select a person" />
+                                                                                </SelectTrigger>
+                                                                                <SelectContent>
+                                                                                    <SelectGroup>
+                                                                                        <SelectItem value="1 person">1 person</SelectItem>
+                                                                                        <SelectItem value="2 person">2 person</SelectItem>
+                                                                                        <SelectItem value="3 person">3 person</SelectItem>
+                                                                                        <SelectItem value="4 person">4 person</SelectItem>
+                                                                                        <SelectItem value="5 person">5 person</SelectItem>
+                                                                                        <SelectItem value="6 person">6 person</SelectItem>
+                                                                                        <SelectItem value="7 person">7 person</SelectItem>
+                                                                                        <SelectItem value="8 person">8 person</SelectItem>
+                                                                                        <SelectItem value="9 person">9 person</SelectItem>
+                                                                                        <SelectItem value="10 person">10 person</SelectItem>
+                                                                                    </SelectGroup>
+                                                                                </SelectContent>
+                                                                            </Select>
+                                                                        </FormControl>
+                                                                        <FormMessage />
+                                                                    </FormItem>
+                                                                )}
+                                                            />
+                                                        </div>
+                                                        <div className="w-full flex flex-col gap-4">
+                                                            <FormField
+                                                                name="name"
+                                                                control={form.control}
+                                                                render={({ field }) => (
+                                                                    <FormItem>
+                                                                        <FormLabel>Name</FormLabel>
+                                                                        <FormControl>
+                                                                            <Input
+                                                                                {...field}
+                                                                                type="text"
+                                                                                id="name"
+                                                                                placeholder="Enter your name"
+                                                                                className="w-full bg-white py-5 px-4"
+                                                                            />
+                                                                        </FormControl>
+                                                                        <FormMessage />
+                                                                    </FormItem>
+                                                                )}
+                                                            />
+                                                            <FormField
+                                                                name="Phone"
+                                                                control={form.control}
+                                                                render={({ field }) => (
+                                                                    <FormItem>
+                                                                        <FormLabel>Phone</FormLabel>
+                                                                        <FormControl>
+                                                                            <Input
+                                                                                {...field}
+                                                                                type="tel"
+                                                                                id="Phone"
+                                                                                placeholder="Enter your phone number"
+                                                                                className="w-full bg-white py-5 px-4"
+                                                                            />
+                                                                        </FormControl>
+                                                                        <FormMessage />
+                                                                    </FormItem>
+                                                                )}
+                                                            />
+                                                            <FormField
+                                                                name="Email"
+                                                                control={form.control}
+                                                                render={({ field }) => (
+                                                                    <FormItem>
+                                                                        <FormLabel>Email</FormLabel>
+                                                                        <FormControl>
+                                                                            <Input
+                                                                                {...field}
+                                                                                type="email"
+                                                                                id="Email"
+                                                                                placeholder="Enter your email address"
+                                                                                className="w-full bg-white py-5 px-4"
+                                                                            />
+                                                                        </FormControl>
+                                                                        <FormMessage />
+                                                                    </FormItem>
+                                                                )}
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                   
+                                                </form>
+                                            </Form>
+
+                                        </div>
+                                        <DialogFooter className="sm:justify-start">
+                                            <DialogClose asChild>
+                                            <Button type="submit">Submit</Button>
+                                            </DialogClose>
+                                        </DialogFooter>
+                                    </DialogContent>
+                                </Dialog>
             </div>
                </Container>
                
@@ -88,7 +290,7 @@ const Navbar = () => {
             <Container>
                 <div className='flex justify-between items-center  py-3 border-b'>
                     <h1 className="text-2xl font-bold">
-                        <Link href="/" className="logo">Ayesha kitchen </Link>
+                        <Link href="/" className="logo uppercase">Ayesha <span className="text-[#25bb4a]">kitchen</span>  </Link>
                     </h1>
                     {/* Navbar */}
                     <nav className={`   hidden lg:block`}>
